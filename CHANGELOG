@@ -1,0 +1,14 @@
+Changelog
+=========
+
+## [0.1.0] - 2020-10-15
+### Summary
+This version establishes denacculator as a functional tool for converting ADRC data freeze CSV files into a format ready for our REDCap NDV form.
+
+### Added
+
+* Add ability to take output as an argument to denacculator (Samantha Emerson)
+* Update README with usage notes (Samantha Emerson)
+* Add functioning unit tests (Samantha Emerson)
+* Add functional csv converter nacc2redcap (Samantha Emerson)
+* Initial commit (Samantha Emerson)
