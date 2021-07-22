@@ -1,7 +1,7 @@
 import unittest
 
 from denacc import nacc2redcap
-from denacc import convert_field_list
+from denacc import new_list
 from denacc import add_fields
 from denacc import add_field_values
 
@@ -20,9 +20,10 @@ class TestDenacculated(unittest.TestCase):
         Tests that field names are being converted properly using
         the dictionary below
         """
-        result = convert_field_list.convert_fields()
+        result = new_list.convert_fields()
         self.assertEqual(self.expected_field_list, result)
 
+    @unittest.skip(reason='Items are not currently being deleted for this REDCap project.')
     def test_for_fields_deleted(self):
         """ Tests that the non-REDCap fields are deleted """
         expected_list = add_fields.list_fields()
@@ -35,39 +36,62 @@ class TestDenacculated(unittest.TestCase):
 
     def test_for_fields_added(self):
         """ Tests that the REDCap-required fields are added """
+        # this test needs to be updated- we no longer need to delete fields in the downloaded data freeze.
         added_fields = add_field_values.add_fields(self.expected_fields)
 
         e = self.expected_fields
         e['ptid'] = e['ndv_ptid']
         e['redcap_event_name'] = ''
         e['nacc_derived_values_complete'] = '2'
-        del e['ndv_visitnum']
-        del e['ndv_naccmoca']
-        del e['ndv_adgcexom']
-        del e['ndv_ngdsgwas']
-        del e['ndv_ngdsexom']
-        del e['ndv_ngdswes']
-        del e['ndv_ngdswgs']
-        del e['ndv_ngdsgwac']
-        del e['ndv_ngdsexac']
-        del e['ndv_ngdsweac']
-        del e['ndv_ngdswgac']
-        del e['ndv_adgcexr']
-        del e['ndv_naccspnl']
-        del e['ndv_naccengl']
-        del e['ndv_apreflan']
-        del e['ndv_ayrspan']
-        del e['ndv_ayrengl']
-        del e['ndv_apcspan']
-        del e['ndv_apcengl']
-        del e['ndv_aspkspan']
-        del e['ndv_areaspan']
-        del e['ndv_awrispan']
-        del e['ndv_aundspan']
-        del e['ndv_aspkengl']
-        del e['ndv_areaengl']
-        del e['ndv_awriengl']
-        del e['ndv_aundengl']
+        # del e['ndv_visitnum']
+        # del e['ndv_adgcexom']
+        # del e['ndv_ngdsgwas']
+        # del e['ndv_ngdsexom']
+        # del e['ndv_ngdswes']
+        # del e['ndv_ngdswgs']
+        # del e['ndv_ngdsgwac']
+        # del e['ndv_ngdsexac']
+        # del e['ndv_ngdsweac']
+        # del e['ndv_ngdswgac']
+        # del e['ndv_adgcexr']
+        # del e['ndv_reytcor']
+        # del e['ndv_telcov']
+        # del e['ndv_rey6int']
+        # del e['ndv_respasst']
+        # del e['ndv_respintr']
+        # del e['ndv_reydint']
+        # del e['ndv_telmod']
+        # del e['ndv_otrlbli']
+        # del e['ndv_rey3int']
+        # del e['ndv_reyfpos']
+        # del e['ndv_otrlbrr']
+        # del e['ndv_vntpcnc']
+        # del e['ndv_otraila']
+        # del e['ndv_respval']
+        # del e['ndv_modcomm']
+        # del e['ndv_rey5rec']
+        # del e['ndv_otrailb']
+        # del e['ndv_resphear']
+        # del e['ndv_reydrec']
+        # del e['ndv_rey4rec']
+        # del e['ndv_vnttotw']
+        # del e['ndv_rey2int']
+        # del e['ndv_respdist']
+        # del e['ndv_respoth']
+        # del e['ndv_otrlarr']
+        # del e['ndv_rey3rec']
+        # del e['ndv_respothx']
+        # del e['ndv_rey6rec']
+        # del e['ndv_rey2rec']
+        # del e['ndv_rey5int']
+        # del e['ndv_otrlali']
+        # del e['ndv_mocbtots']
+        # del e['ndv_respfatg']
+        # del e['ndv_rey1rec']
+        # del e['ndv_rey1int']
+        # del e['ndv_respemot']
+        # del e['ndv_respdisn']
+        # del e['ndv_rey4int']
 
         self.assertEqual(added_fields, e)
 
@@ -580,6 +604,44 @@ def set_dict() -> dict:
         'ndv_udsverti': '',
         'ndv_cogstat': '',
         'ndv_naccc1': '',
+        'ndv_telcov': '',
+        'ndv_telmod': '',
+        'ndv_modcomm': '',
+        'ndv_mocbtots': '',
+        'ndv_rey1rec': '',
+        'ndv_rey1int': '',
+        'ndv_rey2rec': '',
+        'ndv_rey2int': '',
+        'ndv_rey3rec': '',
+        'ndv_rey3int': '',
+        'ndv_rey4rec': '',
+        'ndv_rey4int': '',
+        'ndv_rey5rec': '',
+        'ndv_rey5int': '',
+        'ndv_rey6rec': '',
+        'ndv_rey6int': '',
+        'ndv_otraila': '',
+        'ndv_otrlarr': '',
+        'ndv_otrlali': '',
+        'ndv_otrailb': '',
+        'ndv_otrlbrr': '',
+        'ndv_otrlbli': '',
+        'ndv_reydrec': '',
+        'ndv_reydint': '',
+        'ndv_reytcor': '',
+        'ndv_reyfpos': '',
+        'ndv_vnttotw': '',
+        'ndv_vntpcnc': '',
+        'ndv_respval': '',
+        'ndv_resphear': '',
+        'ndv_respdist': '',
+        'ndv_respintr': '',
+        'ndv_respdisn': '',
+        'ndv_respfatg': '',
+        'ndv_respemot': '',
+        'ndv_respasst': '',
+        'ndv_respoth': '',
+        'ndv_respothx': '',
         'ndv_mocacomp': '',
         'ndv_mocareas': '',
         'ndv_mocaloc': '',

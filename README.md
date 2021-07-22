@@ -26,6 +26,6 @@ The program's functionality is to:
 
  1) rename the header fields from the NACC format to REDCap's format,
  2) delete columns that 1Florida ADRC is not using in our NACC-Derived Values
-   form,
+   form (currently not in use),
  3) add columns to make the csv immediately REDCap importable ('ptid',
    'redcap_event_name', 'nacc_derived_values_complete')

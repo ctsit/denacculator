@@ -9,6 +9,7 @@
 import csv
 import sys
 
+from denacc import new_list
 from denacc import convert_field_list
 from denacc import add_fields
 from denacc import add_field_values
@@ -18,7 +19,7 @@ def rename_fields(file_input, err=sys.stderr):
     """ Adds ndv_ prefix and converts field labels to lower case """
     print("Beginning header renaming...", file=err)
 
-    header = convert_field_list.convert_fields()
+    header = new_list.convert_fields()
     reader = csv.DictReader(file_input, fieldnames=header)
 
     with open('renamed.csv', 'w', newline='') as renamed:
@@ -39,8 +40,8 @@ def delete_columns(err=sys.stderr):
             writer.writeheader()
             print("Deleting extra columns...", file=err)
             for row in reader:
-                new = delete_values(row)
-                writer.writerow(new)
+                # new = delete_values(row)
+                writer.writerow(row)
 
 
 def delete_values(row):
@@ -71,6 +72,44 @@ def delete_values(row):
     del row['ndv_areaengl']
     del row['ndv_awriengl']
     del row['ndv_aundengl']
+    del row['ndv_reytcor']
+    del row['ndv_telcov']
+    del row['ndv_rey6int']
+    del row['ndv_respasst']
+    del row['ndv_respintr']
+    del row['ndv_reydint']
+    del row['ndv_telmod']
+    del row['ndv_otrlbli']
+    del row['ndv_rey3int']
+    del row['ndv_reyfpos']
+    del row['ndv_otrlbrr']
+    del row['ndv_vntpcnc']
+    del row['ndv_otraila']
+    del row['ndv_respval']
+    del row['ndv_modcomm']
+    del row['ndv_rey5rec']
+    del row['ndv_otrailb']
+    del row['ndv_resphear']
+    del row['ndv_reydrec']
+    del row['ndv_rey4rec']
+    del row['ndv_vnttotw']
+    del row['ndv_rey2int']
+    del row['ndv_respdist']
+    del row['ndv_respoth']
+    del row['ndv_otrlarr']
+    del row['ndv_rey3rec']
+    del row['ndv_respothx']
+    del row['ndv_rey6rec']
+    del row['ndv_rey2rec']
+    del row['ndv_rey5int']
+    del row['ndv_otrlali']
+    del row['ndv_mocbtots']
+    del row['ndv_respfatg']
+    del row['ndv_rey1rec']
+    del row['ndv_rey1int']
+    del row['ndv_respemot']
+    del row['ndv_respdisn']
+    del row['ndv_rey4int']
     return row
 
 
