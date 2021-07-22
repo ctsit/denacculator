@@ -1,6 +1,20 @@
 Changelog
 =========
 
+## [0.2.0] - 2021-07-22
+### Summary
+The 1Florida ADRC REDCap project was updated to include all fields in the NACC quarterly data freeze, so denacculator has been updated to match. I also changed out the BSD-2-Clause License for the Apache License 2.0 as per Chris' request.
+
+### Added
+
+ * Add AUTHORS file (Samantha Emerson)
+
+### Changed
+
+ * Update denacculator to account for full NACC freeze dataset (Samantha Emerson)
+ * Update license (Samantha Emerson)
+
+
 ## [0.1.0] - 2020-10-15
 ### Summary
 This version establishes denacculator as a functional tool for converting ADRC data freeze CSV files into a format ready for our REDCap NDV form.
