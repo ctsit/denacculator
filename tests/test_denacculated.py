@@ -1,7 +1,7 @@
 import unittest
 
 from denacc import nacc2redcap
-from denacc import new_list
+from denacc import new_list_dec2021 as new_list
 from denacc import add_fields
 from denacc import add_field_values
 
@@ -23,6 +23,7 @@ class TestDenacculated(unittest.TestCase):
         result = new_list.convert_fields()
         self.assertEqual(self.expected_field_list, result)
 
+# Need to update this test with the new list of deleted fields or add those fields to the redcap project. These fields were added in December 2021's freeze and are not accounted for in our project (yet).
     @unittest.skip(reason='Items are not currently being deleted for this REDCap project.')
     def test_for_fields_deleted(self):
         """ Tests that the non-REDCap fields are deleted """
@@ -1086,6 +1087,19 @@ def set_dict() -> dict:
         'ndv_npfaut4': '',
         'ndv_naccdage': '',
         'ndv_naccint': '',
+        'ndv_npartag': '',
+        'ndv_npatgsev': '',
+        'ndv_npatgamy': '',
+        'ndv_npatgam1': '',
+        'ndv_npatgam2': '',
+        'ndv_npatgam3': '',
+        'ndv_npatgam4': '',
+        'ndv_npatgam5': '',
+        'ndv_npatgfrn': '',
+        'ndv_npatgfr1': '',
+        'ndv_npatgfr2': '',
+        'ndv_npatgfr3': '',
+        'ndv_npatgfr4': '',
         'ndv_npnit': '',
         'ndv_npcerad': '',
         'ndv_npadrda': '',

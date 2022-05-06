@@ -9,7 +9,7 @@
 import csv
 import sys
 
-from denacc import new_list
+from denacc import new_list_dec2021 as new_list
 from denacc import convert_field_list
 from denacc import add_fields
 from denacc import add_field_values
@@ -40,76 +40,11 @@ def delete_columns(err=sys.stderr):
             writer.writeheader()
             print("Deleting extra columns...", file=err)
             for row in reader:
-                # new = delete_values(row)
+                new = delete_values(row)
                 writer.writerow(row)
 
 
 def delete_values(row):
-    del row['ndv_visitnum']
-    del row['ndv_naccmoca']
-    del row['ndv_adgcexom']
-    del row['ndv_ngdsgwas']
-    del row['ndv_ngdsexom']
-    del row['ndv_ngdswes']
-    del row['ndv_ngdswgs']
-    del row['ndv_ngdsgwac']
-    del row['ndv_ngdsexac']
-    del row['ndv_ngdsweac']
-    del row['ndv_ngdswgac']
-    del row['ndv_adgcexr']
-    del row['ndv_naccspnl']
-    del row['ndv_naccengl']
-    del row['ndv_apreflan']
-    del row['ndv_ayrspan']
-    del row['ndv_ayrengl']
-    del row['ndv_apcspan']
-    del row['ndv_apcengl']
-    del row['ndv_aspkspan']
-    del row['ndv_areaspan']
-    del row['ndv_awrispan']
-    del row['ndv_aundspan']
-    del row['ndv_aspkengl']
-    del row['ndv_areaengl']
-    del row['ndv_awriengl']
-    del row['ndv_aundengl']
-    del row['ndv_reytcor']
-    del row['ndv_telcov']
-    del row['ndv_rey6int']
-    del row['ndv_respasst']
-    del row['ndv_respintr']
-    del row['ndv_reydint']
-    del row['ndv_telmod']
-    del row['ndv_otrlbli']
-    del row['ndv_rey3int']
-    del row['ndv_reyfpos']
-    del row['ndv_otrlbrr']
-    del row['ndv_vntpcnc']
-    del row['ndv_otraila']
-    del row['ndv_respval']
-    del row['ndv_modcomm']
-    del row['ndv_rey5rec']
-    del row['ndv_otrailb']
-    del row['ndv_resphear']
-    del row['ndv_reydrec']
-    del row['ndv_rey4rec']
-    del row['ndv_vnttotw']
-    del row['ndv_rey2int']
-    del row['ndv_respdist']
-    del row['ndv_respoth']
-    del row['ndv_otrlarr']
-    del row['ndv_rey3rec']
-    del row['ndv_respothx']
-    del row['ndv_rey6rec']
-    del row['ndv_rey2rec']
-    del row['ndv_rey5int']
-    del row['ndv_otrlali']
-    del row['ndv_mocbtots']
-    del row['ndv_respfatg']
-    del row['ndv_rey1rec']
-    del row['ndv_rey1int']
-    del row['ndv_respemot']
-    del row['ndv_respdisn']
-    del row['ndv_rey4int']
     return row
 
 
